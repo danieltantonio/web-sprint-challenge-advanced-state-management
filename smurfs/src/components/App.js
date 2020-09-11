@@ -2,6 +2,11 @@ import React, { useEffect } from "react";
 import { connect } from 'react-redux';
 import "./App.css";
 
+// Components
+import CreateSmurf from './CreateSmurf';
+import Smurfs from './Smurfs';
+
+// Actions
 import { fetchSmurfData } from '../store/actions';
 
 const App = (props) => {
@@ -12,16 +17,17 @@ const App = (props) => {
 
   return (
     <div>
-      It works
+      <CreateSmurf />
+      <Smurfs />
     </div>
   )
 };
 
 const mapStateToProps = state => {
   return {
-    smurfs: state.smurfs,
-    isLoading: state.isLoading,
-    error: state.error
+    smurfs: state.fetchSmurf.smurfs,
+    isLoading: state.fetchSmurf.isLoading,
+    error: state.fetchSmurf.error
   }
 }
 

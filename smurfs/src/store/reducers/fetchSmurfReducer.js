@@ -6,7 +6,7 @@ const initState = {
     isLoading: false
 }
 
-export const fetchSmurf (state = initState, action) => {
+export const fetchSmurf = (state = initState, action) => {
     switch(action.type) {
         case FETCH_DATA:
             return {
